@@ -1,0 +1,13 @@
+
+/*----------------------------- FIN RESET -----------------------------*/ 
+
+/*----------------------------- COMIENZO ESTILO -----------------------------*/
+
+body {
+	background-color: #666666;
+	font-family: 'Roboto', sans-serif;
+}
+
+#loader {
+	display:none;
+}
