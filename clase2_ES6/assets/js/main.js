@@ -27,7 +27,7 @@
 /*Crear un archivo main.js con los siguientes puntos y completar debajo de cada enunciado.
 Los valores de cada punto se deben mostrar con un console.log() especificando el dato que se muestra con un enunciado ej:
 console.log('1 - El promedio es:', miPromedio);
-Completar esta tarea con el link a github
+Completar esta tarea con el link a github */
 
 const alumnos = [
     { nombre: 'Rodrigo Andrade', edad: 23 },
