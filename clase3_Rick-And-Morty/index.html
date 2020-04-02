@@ -70,7 +70,7 @@
                     <p class="title is-4">${species}</p>
                     <p class="title is-4">${planet}</p>
                     <div class="buttons">
-                      <button class="button is-primary">Primary</button>
+                      <button class="button is-primary open_modal">Primary</button>
                     </div>
                   </div>
                 </div>
@@ -145,17 +145,19 @@
 
     });
 
-    //Modal;
+    //Modal
     const $modalOpenArr = document.querySelectorAll('.open_modal');
     const $modal = document.querySelector('.modal');
     const $modalClose = document.querySelector('.modal-close');
-
-    $modalOpenArr.forEach(boton) => {
-      boton.addEventListener('click0', () => {
-        $modal.clasList.add("is-active");
-        console.log('click');
+    $modalOpenArr.forEach((boton) => {
+      boton.addEventListener('click', () => {
+        $modal.classList.add("is-active");
+        console.log('click')
       })
-    }
+    })
+    $modalClose.addEventListener('click', () => {
+      $modal.classList.remove("is-active");
+    })
 
 }
 
