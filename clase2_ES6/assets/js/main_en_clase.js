@@ -81,9 +81,9 @@ escribeMensaje('Hola mike');
 
 //3) Modules (Imports and Exports)
 
-import { peliculasCopadas, cantidadPeliculas } from '../js/libreriaAmiga.js';
+/*import { peliculasCopadas, cantidadPeliculas } from '../js/libreriaAmiga.js';
 console.log('mis Pelis:',peliculasCopadas)
-console.log('cantidad de mis Pelis:',cantidadPeliculas(peliculasCopadas))
+console.log('cantidad de mis Pelis:',cantidadPeliculas(peliculasCopadas))*/
 
 //4) Template Literals
 
