@@ -76,12 +76,12 @@ const filtrarAlumnosEdad = (alumnos) => {
 }
 
 const alumnosMayores = alumnos.filter(filtrarAlumnosEdad);
-//Imprimo en pantalla rta ejercicio 2;
+// Imprimo en pantalla rta ejercicio 2;
 console.log('2- Los alumnos mayores de 25 años son: ', alumnosMayores);
 
 // 3. Obtener un entero con la edad total de todos los alumnos usando .reduce() (Investigar: https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/reduce)
 
-//Funcion declarada normalmente;
+// Funcion declarada normalmente;
 /*function sumaEdades (total, alumno) {
     return total + alumno.edad;
 }
@@ -100,12 +100,12 @@ console.log('3- La suma de las edades de todos los alumnos es igual a: ', sumaEd
 // da 'false' pero porque no estoy sabiendo como hacer para buscar en los objetos DENTRO del array 'alumnos';
 //console.log(alumnos.includes(33));
 
-//Funcion declarada normalmente;
+// Funcion declarada normalmente;
 /*function buscarEdadFranco (alumnos) {
     return alumnos.edad === 33;
 };*/
 
-//Arrow Function;
+// Arrow Function;
 const buscarEdadFranco = (alumnos) => {
     return alumnos.edad === 33;
 };
@@ -127,12 +127,12 @@ console.log('5 bis- Constante con el nombre primer alumno: ', primerAlumnoNombre
 
 // 6. Obtener un array con aquellos alumnos que empiezan con la letra "M", usando .filter()
 
-//Funcion declarada normalmente;
+// Funcion declarada normalmente;
 /*function alumnosConM (alumnos) {
     return alumnos.nombre.startsWith('M');
 }*/
 
-//Arrow Function;
+// Arrow Function;
 const alumnosConM = alumnos.filter((alumnos) => {
     return alumnos.nombre.startsWith('M');
 
@@ -142,7 +142,19 @@ console.log('6- Los alumnos cuyos nombres empiezan con la letra "M" son:', alumn
 
 // 7. Obtener un array agregando una propiedad/key/atributo más a cada elemento usando .map()
  
-console.log('7- El array con la nueva propiedad:')
+// Declaro array que tiene las nuevas comidas favoritas;
+let comidas = ["Fideos con tuco", "Pizza", "Papas fritas", "Milanesa napolitana", "Pastel de papas", "Omelette", "Shawarma", "Sushi", "Empanadas", "Ensalada rusa"];
+
+// Arrow Function;
+// IMPORTANTISIMO PORQUE FIJA ME OLVIDO: paso como parametro 'alumnos' e 'i'. Como .map pasa por cada uno de los elementos del array, el parametro alumnos le da la data para ver QUE va a 'evaluar' o 'revisar'. Entonces uso 'i' como CONTADOR, que va a ir aumentando a medida que aumente el index del array alumnos;
+const comidasFavoritas = alumnos.map((alumnos, i) => {
+    alumnos.comida = comidas[i];
+
+    return alumnos.comida;
+})
+
+//Imprimo en pantalla rta del ejercicio 7;
+console.log('7- Ahora sabemos la comida favorita de los alumnos:', comidasFavoritas);
 
 // 8. Obtener a partir de la constante en 3, el promedio de edad del curso dividiendo la misma por el total de alumnos
 
