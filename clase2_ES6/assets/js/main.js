@@ -60,7 +60,7 @@ const mostrarNombreAlumnos = (alumnos) => {
 const nombreAlumnos = alumnos.map(mostrarNombreAlumnos);
 nombreAlumnos.toString();
 // Imprimo en pantalla rta ejercicio 1;
-console.log('1- Los nombres de lxs alumnxs son: ', nombreAlumnos);
+console.log('1- Los nombres de los alumnos son: ', nombreAlumnos);
 
 // 2. Obtener un array con aquellos alumnos mayores a 25 años usando .filter()
 
@@ -140,6 +140,7 @@ const alumnosConM = alumnos.filter((alumnos) => {
 // Imprimo en pantalla rta del ejercicio 6;
 console.log('6- Los alumnos cuyos nombres empiezan con la letra "M" son:', alumnosConM);
 
+
 // 7. Obtener un array agregando una propiedad/key/atributo más a cada elemento usando .map()
  
 // Declaro array que tiene las nuevas comidas favoritas;
@@ -161,12 +162,23 @@ console.log('7- Ahora sabemos la comida favorita de los alumnos:', comidasFavori
 const promedioEdad = sumaEdadAlumnos/alumnos.length;
 // Imprimo en pantalla rta del ejercicio 8;
 console.log('8- Promedio de edad del curso: ', promedioEdad);
+//Imprimo en pantalla rta bis del ejercicio 8 (promedio redondeado);
+const promedioEdadEntero = Math.round(promedioEdad);
+console.log('8 bis- Y también el promedio de edad pero redondeado: ', promedioEdadEntero);
 
 
 //Async/Await
 
 // 9. Buscar una API que más te guste en https://github.com/toddmotto/public-apis pero que debajo de la columna Auth especifique "No"
+
+// API elegida: https://randomfox.ca/floof/ o https://placegoat.com/;
+
 // 10. Implementar una función getDataWithPromises que utilice la API de Promises usando .then() (investigar)
+
+function getDataWithPromises () {};
+
 // 11. Implementar una función getDataWithAsync que utilice async / await junto con la API fetch para buscar los datos de la API elegida
+
 // 12. Hiciste manejo de errores? En caso que no lo hayas hecho utiliza .catch() en la función getDataWithPromises o try / catch en la función getDataWithAsync
+
 // 13. Si te animás un poco más mostra los datos que trajiste en el elemento div con id "content". En caso que sea un array podés iterar usando .forEach() o .map(). Para ello debes investigar y usar alguna de las siguientes APIs del DOM: querySelector(), innerHTML, textContent */
