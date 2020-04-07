@@ -215,7 +215,7 @@ const getGatos = async () => //Se ejecuta de manera asincronica
     const gatos = await getDataWithAsync();
 }
 
-getGatos();
+//getGatos();
 
 const getGatoSrc = async () => {
     try{
@@ -234,7 +234,7 @@ const getGatoSrc = async () => {
     }
 }
 
-getGatoSrc();
+//getGatoSrc();
 
 
 // 12. Hiciste manejo de errores? En caso que no lo hayas hecho utiliza .catch() en la función getDataWithPromises o try / catch en la función getDataWithAsync
@@ -244,4 +244,16 @@ console.log("12- Manejo de errores hecho");
 
 // 13. Si te animás un poco más mostra los datos que trajiste en el elemento div con id "content". En caso que sea un array podés iterar usando .forEach() o .map(). Para ello debes investigar y usar alguna de las siguientes APIs del DOM: querySelector(), innerHTML, textContent */
 
-console.log('13- A continuación, un gato en pantalla');
+console.log('13- Click en el botón para ver un gato en pantalla');
+
+
+
+// Funcion que se ejecuta en el onclick del boton 'buttonSorpresa'. Ejecuta las funciones getGatos() y gatGatoSrc(), que buscan la api, convierten a .json, obtienen la src de la imagen e imprimen en pantalla;
+
+const botonSorpresa = document.getElementById("buttonSorpresa");
+botonSorpresa.addEventListener("click", function(){
+    console.log("Click. Tomá un gato");
+    botonSorpresa.innerHTML = "A ver, otro más";
+    getGatos();
+    getGatoSrc();
+});
