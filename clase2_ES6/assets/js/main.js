@@ -222,7 +222,10 @@ const getGatoSrc = async () => {
         const gatos = await getDataWithAsync();
         const gatosSrc = gatos.file;
         // Imprimo en pantalla rta ejercicio 11 (funcion con async/await);
-        console.log("11- Hay un gato escondido. Click para encontrar al gato: ", gatosSrc);
+        console.log("11- El gato viene de acá: ", gatosSrc);
+        const elemento = document.getElementById('content');
+        elemento.innerHTML = `<img alt="" src="${gatosSrc}"/>`;
+        
     }
     catch (error)
     {
@@ -240,3 +243,5 @@ getGatoSrc();
 console.log("12- Manejo de errores hecho");
 
 // 13. Si te animás un poco más mostra los datos que trajiste en el elemento div con id "content". En caso que sea un array podés iterar usando .forEach() o .map(). Para ello debes investigar y usar alguna de las siguientes APIs del DOM: querySelector(), innerHTML, textContent */
+
+console.log('13- A continuación, un gato en pantalla');
