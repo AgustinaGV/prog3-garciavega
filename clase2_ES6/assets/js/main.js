@@ -171,14 +171,72 @@ console.log('8 bis- Y también el promedio de edad pero redondeado: ', promedioE
 
 // 9. Buscar una API que más te guste en https://github.com/toddmotto/public-apis pero que debajo de la columna Auth especifique "No"
 
-// API elegida: https://randomfox.ca/floof/ o https://placegoat.com/;
+// API elegida: https://aws.random.cat/meow;
+// Imprimo en pantalla rta del ejercicio 9 (elegir API);
+console.log(`9- La API que elegí es: https://aws.random.cat/meow`);
 
 // 10. Implementar una función getDataWithPromises que utilice la API de Promises usando .then() (investigar)
 
-function getDataWithPromises () {};
+// Funcion ejercicio 10;
+/* function getDataWithPromises () {
+const url = 'https://aws.random.cat/meow'; 
+
+fetch(url)
+.then(response => response.json())
+.then(data => { //data es el resultado del response.json, es decir, es el resultado de lo devuelto por la API convertido a JSON;
+
+    // Empiezo a imprimir en pantalla rtas del ejercicio 10 (funcion con .then);
+    console.log (`10- `);
+    console.log(data);
+    const elemento = document.getElementById('content');
+    elemento.innerHTML = `<img alt="" src="${data.file}"/>`;
+    console.log(`A continuación un gato`);
+    console.log(`¿de dónde sale? de acá: ${data.file}`);
+})
+.catch(err => console.log(`Ah, shit, here we go again: ${err}`));
+
+}
+
+getDataWithPromises();*/
 
 // 11. Implementar una función getDataWithAsync que utilice async / await junto con la API fetch para buscar los datos de la API elegida
 
+// Funcion ejercicio 11;
+async function getDataWithAsync()
+{
+    const url = 'https://aws.random.cat/meow';
+    const response = await fetch(url);
+    const imgs = await response.json();
+    return imgs;
+}
+
+const getGatos = async () => //Se ejecuta de manera asincronica
+{
+    const gatos = await getDataWithAsync();
+}
+
+getGatos();
+
+const getGatoSrc = async () => {
+    try{
+        const gatos = await getDataWithAsync();
+        const gatosSrc = gatos.file;
+        // Imprimo en pantalla rta ejercicio 11 (funcion con async/await);
+        console.log("11- Hay un gato escondido. Click para encontrar al gato: ", gatosSrc);
+    }
+    catch (error)
+    {
+        // Imprimo en pantalla errores posibles del ejercicio 11;
+        console.error(error);
+    }
+}
+
+getGatoSrc();
+
+
 // 12. Hiciste manejo de errores? En caso que no lo hayas hecho utiliza .catch() en la función getDataWithPromises o try / catch en la función getDataWithAsync
+
+// Imprimo en pantalla rta ejercicio 12;
+console.log("12- Manejo de errores hecho");
 
 // 13. Si te animás un poco más mostra los datos que trajiste en el elemento div con id "content". En caso que sea un array podés iterar usando .forEach() o .map(). Para ello debes investigar y usar alguna de las siguientes APIs del DOM: querySelector(), innerHTML, textContent */

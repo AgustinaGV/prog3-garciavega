@@ -188,9 +188,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
 .then(responde => responde.json()) //primero
 .then(users => { //despues hace esto. El nombre "users" podria ser cualquier otro, no hay nombre especifico. Es el nombre que le asignamos a lista de objetos de JSON.
 
-
     //console.log("mis usuarios", users);
-
 
     //Haciendo destructuring, template literals
     const nombres = users.map( ({name,email})=> {
