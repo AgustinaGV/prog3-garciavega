@@ -224,7 +224,7 @@ const getGatoSrc = async () => {
         // Imprimo en pantalla rta ejercicio 11 (funcion con async/await);
         console.log("11- El gato viene de acá: ", gatosSrc);
         const elemento = document.getElementById('content');
-        elemento.innerHTML = `<img alt="" src="${gatosSrc}"/>`;
+        elemento.innerHTML = `<img alt="" style="max-height: 500px; min-height: 500px;" src="${gatosSrc}"/>`;
         
     }
     catch (error)
