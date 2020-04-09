@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>App Rick and Morty</title>
+    <link href="assets/css/style.css"" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
@@ -13,9 +14,7 @@
       <h1 class="title">
         Rick and Morty
       </h1>
-      <p class="subtitle">
-        My first fetch <strong>App</strong>!
-      </p>
+      <p class="subtitle">Personajes, planetas, episodios y más</p>
       <div class="field is-grouped">
         <p class="control is-expanded">
           <input class="input input_search" type="text" placeholder="Find a character">
@@ -33,140 +32,23 @@
   </section>
 
   <div class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-content">
-      <!-- Any other Bulma elements you want -->
-      <p>Este es mi modal perris</p>
+    <div class="modal-background" id="modalLayer"></div>
+    <div class="modal-content" id="modalContenido">
+      <p id="modalPersonaje">Personaje</p>
+      <img alt="" src="" id="modalImagen"/>
+      <p id="modalPlaneta">Planeta</p>
+      <p id="modalEpisodios">Episodios</p>
+      <button id="modalButton">Lo que sea</button>
     </div>
     <button class="modal-close is-large" aria-label="close"></button>
   </div>
 
+  <!--IMPRIMIR MODAL EN EL JAVASCRIPT
+  IR A BUSCARLO EN LA FUNCION POR SU ID Y DARLE EL ATRIBUTO PARA Q SEA VISIBLE-->
 
 
-<script>
-
-  const CardItem = props => {
-
-    const {image, name, species, origin} = props;
-    const {name: planet, url} = origin;
-
-    return `
-      <div class="column is-one-quarter">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="${image}" alt="Imagen de ${name}">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-48x48">
-                      <img src="${image}" alt="Placeholder image">
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-4">${name}</p>
-                    <p class="title is-4">${species}</p>
-                    <p class="title is-4">${planet}</p>
-                    <div class="buttons">
-                      <button class="button is-primary open_modal">Primary</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> `
-  };
-
-
-  // PARA PROBAR
-  /*const $grid = document.querySelector('.grid');
-  const cardElement = CardItem({image: '', name: 'Agustina', species: 'Human', origin: {name: 'Earth'}});
-
-  setTimeout(() => {
-    $grid.innerHTML += cardElement;
-  }, 5000);*/
-
-  const getCharacters = async (baseURL, from, to) => {
-    //Array.From investigar, parecida a .map;
-    //Array.from ({length:5}, (v, i) => i);
-    // array from genera un array a partir de la iteración;
-    const charactersRange = Array.from({length: to - from + 1}, (_,index)=>index + 1).join(',');
-    const url = `${baseURL}character/${charactersRange}`;
-    const response = await fetch(url);
-    const characters =  await response.json();
-
-    return characters;
-  }
-
-  const getCharactersByQuery = async (baseURL, query) => {
-    const url = `${baseURL}/character/?name=${query}`;
-    const response = await fetch(url);
-    const characters = await response.json();
-
-    return characters;
-
-  }
-
-  const appendElements = (characters, emptyGrid) => {
-    const $grid = document.querySelector('.grid');
-    if(emptyGrid) {$grid.innerHTML = null;};
-      characters.forEach(character => {
-      const cardItemHtml = CardItem(character);
-      $grid.innerHTML += cardItemHtml;
-    
-    });
-
-  }
-
-  const main = async () => {
-
-    const baseURL = 'https://rickandmortyapi.com/api/';
-
-    //Parte 1: obtener elementos de la api y mostrarlos en el dom;
-    const characters = await getCharacters(baseURL, 1, 20);
-    console.log(characters);
-    appendElements(characters);
-    //appendElements(characters);
-
-    // Parte 2: crear un buscador de personajes;
-    const $submit = document.querySelector('.handler_search');
-
-    $submit.addEventListener('click', async (event)=> {
-      event.preventDefault();
-      const $input = document.querySelector('.input_search');
-      console.log('click en search');
-      const valor = $input.value;
-      console.log(valor);
-      
-      const charactersByQuery = await getCharactersByQuery(baseURL, valor);
-      console.log(charactersByQuery.results);
-      appendElements(charactersByQuery.results, true);
-
-    });
-
-    //Modal
-    const $modalOpenArr = document.querySelectorAll('.open_modal');
-    const $modal = document.querySelector('.modal');
-    const $modalClose = document.querySelector('.modal-close');
-    $modalOpenArr.forEach((boton) => {
-      boton.addEventListener('click', () => {
-        $modal.classList.add("is-active");
-        console.log('click')
-      })
-    })
-    $modalClose.addEventListener('click', () => {
-      $modal.classList.remove("is-active");
-    })
-
-}
-
-main ();
-
-
-</script>
-
+  <script src="assets/js/main.js"></script>
 
   </body>
+
 </html>
