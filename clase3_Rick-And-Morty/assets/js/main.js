@@ -23,7 +23,7 @@ const CardItem = props => {
                   <p class="title is-4">${species}</p>
                   <p class="title is-4">${planet}</p>
                   <div class="buttons">
-                    <button class="button is-primary open_modal" id=${id}">Primary</button>
+                    <button class="button is-primary open_modal" id="${id}">Primary</button>
                   </div>
                 </div>
               </div>
@@ -102,7 +102,7 @@ const main = async () => {
   const $modalClose = document.querySelector('.modal-close');
 
   $modalOpenArr.forEach((boton) => {
-    //addEventListener para visibilizar el modal;
+    //EventListener para visibilizar el modal;
     boton.addEventListener('click', (id) => {
       $modal.classList.add("is-active");
       // Voy a buscar mis elementos HTML por ID para modificar su contenido;
