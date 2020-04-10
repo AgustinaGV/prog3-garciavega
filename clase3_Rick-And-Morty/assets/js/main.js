@@ -60,8 +60,6 @@ const appendElements = (characters, emptyGrid) => {
     characters.forEach(character => {
     const cardItemHtml = CardItem(character);
     $grid.innerHTML += cardItemHtml;
-    // mepa que cuando vacia la grilla borra al modal;
-    // no, no es eso. La grilla es un elemento que está separado en otra section. Algo debe ser con las cards y los botones;
   
   });
 
@@ -93,6 +91,8 @@ const main = async () => {
 
   });
 
+  // Agregar el modal, al hacer click en un botón debe desplegar un modal con los datos del planeta y episodios en los que aparece el personaje. Un workaround posible es agregar un atributo data al botón y capturarlo como parametro para la muestra de los datos restantes;
+
   //Modal
   // genero constantes para poder modificar mi modal, buscandolo por sus clases;
   const $modalOpenArr = document.querySelectorAll('.open_modal');
@@ -108,6 +108,7 @@ const main = async () => {
       const $imagen = document.getElementById("modalImagen");
       const $planeta = document.getElementById("modalPlaneta");
       const $capitulos = document.getElementById("modalEpisodios");
+      const $modalBoton = document.getElementById("modalButton");
       // Con el ID del boton, resto 1 porque en el ID de personajes no arrancan en 0 sino en 1, osea su ID está adelantado en 1 a su posición;
       const realCharacter = (id.target.id) - 1;
       // con .innerHTML modifico los contenidos de forma dinámica, según el ID del botón que se apretó;
@@ -115,23 +116,54 @@ const main = async () => {
       $imagen.setAttribute("src", characters[realCharacter].image);
       $planeta.innerHTML = `Proveniente de: ${characters[realCharacter].origin.name}`;
       $capitulos.innerHTML = `Cantidad de episodios en los que aparece: ${characters[realCharacter].episode.length}`;
+      $modalBoton.innerHTML = `Ver episodios`
+
+
+      //Llamo a la funcion extra elegida por mí;
+      $modalBoton.addEventListener ('click', () => {
+      console.log("click");
+      funcionExtra (realCharacter);
+      })
+      
     })
   })
+
   //EventListener para invisibilizar el modal;
   $modalClose.addEventListener('click', () => {
     $modal.classList.remove("is-active");
   })
 
+
+  // Agregar una funcionalidad extra a elección del alumno;
+
+  const funcionExtra = (id) => {
+
+    console.log("click 2");
+    console.log(characters[id]);
+    // vacío el modal para poner en pantalla los episodios;
+    const $contenidoModal = document.getElementById("modalFormato");
+    $contenidoModal.innerHTML = null;
+    // declaro constante para traer los episodios del personaje del modal;
+    const cantidadCapitulos = characters[id].episode.length;
+    const todosLosCaps = characters[id].episode;
+    // cantidad de capitulos;
+    console.log(cantidadCapitulos);
+    // url de cada uno de los capitulos;
+    console.log (todosLosCaps);
+
+    // forEach para que en cada uno de los episodios imprima en pantalla;
+    todosLosCaps.forEach(function(capitulo){
+
+      console.log(capitulo);
+      $contenidoModal.innerHTML += `<div>${capitulo}</div>`;
+
+    })
+    
+  }
+
+
+
 }
 
 main ();
 
-// Ajustar la Card de personaje, mejorando el maquetado y los datos mostrados;
-
-// Agregar el modal, al hacer click en un botón debe desplegar un modal con los datos del planeta y episodios en los que aparece el personaje. Un workaround posible es agregar un atributo data al botón y capturarlo como parametro para la muestra de los datos restantes;*/
-
-
-// Se deben mejorar los estilos y maquetado de la app en general;
-
-
-// Agregar una funcionalidad extra a elección del alumno;

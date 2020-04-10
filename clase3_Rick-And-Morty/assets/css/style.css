@@ -50,6 +50,9 @@ table {
 /*--------------------------------------------- FIN RESET ---------------------------------------------*/
 /*------------------------------------------ COMIENZA ESTILO ------------------------------------------*/
 
+/*Ajustar la Card de personaje, mejorando el maquetado y los datos mostrados; 
+Se deben mejorar los estilos y maquetado de la app en general;*/
+
 /* BODY */
 
 body {
@@ -72,6 +75,12 @@ body {
 	width:80%;
 	margin: 0 auto;
 	text-align: center;
+}
+
+#modalPersonaje {
+
+	font-size: 1.5em;
+    font-weight: 700;
 }
 
 #modalFormato p {
