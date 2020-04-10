@@ -6,44 +6,49 @@
     <title>App Rick and Morty</title>
     <link href="assets/css/style.css"" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
   <body>
   <section class="section">
     <div class="container">
-      <h1 class="title"> Rick and Morty </h1>
-      <p class="subtitle">Personajes, planetas, episodios y más</p>
-      <div class="field is-grouped">
+      <!-- HEADER -->
+      <div id="containerHeader">
+        <h1 class="title"> Rick and Morty </h1>
+        <p class="subtitle">Personajes, planetas, episodios y más</p>
+      </div>
+      <!-- SEARCH -->
+      <div class="field is-grouped" id="buscador">
         <p class="control is-expanded">
-          <input class="input input_search" type="text" placeholder="Find a character">
+          <input class="input input_search" type="text" placeholder="Buscá un personaje">
         </p>
         <p class="control">
           <a class="button is-info handler_search">
-            Search
+            Buscar
           </a>
         </p>
       </div>
+      <!-- CARDS -->
       <div class="columns is-multiline grid">
         
       </div>
     </div>
   </section>
 
+  <!-- MODAL -->
   <div class="modal">
     <div class="modal-background" id="modalLayer"></div>
     <div class="modal-content" id="modalContenido">
-      <p id="modalPersonaje">Personaje</p>
-      <img alt="" src="" id="modalImagen"/>
-      <p id="modalPlaneta">Planeta</p>
-      <p id="modalEpisodios">Episodios</p>
-      <button id="modalButton">Lo que sea</button>
+      <div id="modalFormato">
+        <p id="modalPersonaje">Personaje</p>
+        <img alt="" src="" id="modalImagen"/>
+        <p id="modalPlaneta">Planeta</p>
+        <p id="modalEpisodios">Episodios</p>
+        <button id="modalButton">Lo que sea</button>
+      </div>
     </div>
     <button class="modal-close is-large" aria-label="close"></button>
   </div>
-
-  <!--IMPRIMIR MODAL EN EL JAVASCRIPT
-  IR A BUSCARLO EN LA FUNCION POR SU ID Y DARLE EL ATRIBUTO PARA Q SEA VISIBLE-->
-
 
   <script src="assets/js/main.js"></script>
 

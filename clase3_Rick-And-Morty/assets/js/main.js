@@ -20,12 +20,12 @@ const CardItem = props => {
                 </div>
                 <div class="media-content">
                   <p class="title is-4">${name}</p>
-                  <p class="title is-4">${species}</p>
-                  <p class="title is-4">${planet}</p>
-                  <div class="buttons">
-                    <button class="button is-primary open_modal" id="${id}">Primary</button>
-                  </div>
+                  <p class="title is-4 smaller"> Especie: ${species}</p>
+                  <p class="title is-4 smaller">Proveniente de: ${planet}</p>
                 </div>
+              </div>
+              <div class="buttons">
+                    <button class="button is-primary open_modal" id="${id}">Ver más</button>
               </div>
             </div>
           </div>
@@ -36,7 +36,7 @@ const CardItem = props => {
 const getCharacters = async (baseURL, from, to) => {
   //Array.From investigar, parecida a .map;
   //Array.from ({length:5}, (v, i) => i);
-  // array from genera un array a partir de la iteración;
+  // array from genera un array a partir de la iteración. Busca 20 personajes basandose en el FROM y TO;
   const charactersRange = Array.from({length: to - from + 1}, (_,index)=>index + 1).join(',');
   const url = `${baseURL}character/${charactersRange}`;
   const response = await fetch(url);
@@ -60,6 +60,8 @@ const appendElements = (characters, emptyGrid) => {
     characters.forEach(character => {
     const cardItemHtml = CardItem(character);
     $grid.innerHTML += cardItemHtml;
+    // mepa que cuando vacia la grilla borra al modal;
+    // no, no es eso. La grilla es un elemento que está separado en otra section. Algo debe ser con las cards y los botones;
   
   });
 
@@ -77,8 +79,8 @@ const main = async () => {
 
   // Parte 2: crear un buscador de personajes;
   const $submit = document.querySelector('.handler_search');
-
   $submit.addEventListener('click', async (event)=> {
+    // ¿.preventDefault? Investigar;
     event.preventDefault();
     const $input = document.querySelector('.input_search');
     console.log('click en search');
@@ -90,10 +92,6 @@ const main = async () => {
     appendElements(charactersByQuery.results, true);
 
   });
-
-  // PRUEBA del onclick y su id;
-
-  
 
   //Modal
   // genero constantes para poder modificar mi modal, buscandolo por sus clases;
@@ -115,11 +113,8 @@ const main = async () => {
       // con .innerHTML modifico los contenidos de forma dinámica, según el ID del botón que se apretó;
       $personaje.innerHTML = characters[realCharacter].name;
       $imagen.setAttribute("src", characters[realCharacter].image);
-      $planeta.innerHTML = characters[realCharacter].name;
-      $capitulos.innerHTML = characters[realCharacter].name
-      // console.log de prueba;
-      console.log(id.target.id);
-      console.log(realCharacter + " prueba");
+      $planeta.innerHTML = `Proveniente de: ${characters[realCharacter].origin.name}`;
+      $capitulos.innerHTML = `Cantidad de episodios en los que aparece: ${characters[realCharacter].episode.length}`;
     })
   })
   //EventListener para invisibilizar el modal;

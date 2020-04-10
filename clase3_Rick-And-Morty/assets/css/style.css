@@ -50,10 +50,108 @@ table {
 /*--------------------------------------------- FIN RESET ---------------------------------------------*/
 /*------------------------------------------ COMIENZA ESTILO ------------------------------------------*/
 
+/* BODY */
 
+body {
+
+	background-image: url("imgs/cielo1.jpg");
+	background-color: black;
+}
 
 /* MODAL */
 #modalContenido {
 
-    background-color: white;
+	background-color: white;
+	padding: 2em;
+	border-radius: 1em;
+	width: 30%;
 }
+
+#modalFormato {
+
+	width:80%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#modalFormato p {
+
+	padding-bottom:0.7em;
+}
+
+#modalFormato img {
+
+	padding-bottom:0.7em;
+}
+
+/* CONTAINER */
+
+.container {
+	text-align: center;
+}
+
+#containerHeader {
+	margin-bottom: 2em;
+	color: white;
+}
+
+#containerHeader h1 {
+
+	font-family: 'Chewy', cursive;
+	font-size: 5em;
+	font-weight: 100;
+	color: white;
+}
+
+#containerHeader p {
+
+	color:white;
+	color: white;
+    font-size: 1.5em;
+}
+
+/* BUSCADOR */
+
+#buscador {
+
+	width: 50%;
+    margin: 0 auto;
+    padding-bottom: 2em;
+}
+
+
+/* CARDS */
+
+.card {
+
+	border-radius: 2em;
+}
+
+.image img {
+
+	border-radius: 2em 2em 0em 0em;
+}
+
+.title.is4.smaller {
+
+	font-size: 1.2em;
+    font-weight: 500;
+
+}
+
+.button {
+
+	margin: 0 auto;
+	/*margin-bottom: 1em;
+	margin-top: 1em;
+	font-weight: 600;*/
+	font-size: 2em;
+}
+/*
+.buttons .button {
+
+	font-size: 1.3em;
+	border-radius: 1em;
+	padding: 0em 2em 0em 2em;
+	text-transform: uppercase;
+}*/
