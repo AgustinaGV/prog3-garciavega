@@ -154,10 +154,16 @@ const main = async () => {
     // forEach para que en cada uno de los episodios imprima en pantalla;
     todosLosCaps.forEach(function(capitulo){
 
-      console.log(capitulo);
+      //console.log(capitulo);
       $contenidoModal.innerHTML += `<div>${capitulo}</div>`;
 
+      console.log(capitulo);
+
     })
+
+    /* PEDIR A API DE EPISODIOS*/
+
+    
     
   }
 
