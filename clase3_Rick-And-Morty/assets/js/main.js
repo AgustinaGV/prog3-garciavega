@@ -1,7 +1,7 @@
 const CardItem = props => {
 
-  const {id, image, name, species, origin} = props;
-  const {name: planet, url} = origin;
+  const { id, image, name, species, origin } = props;
+  const { name: planet, url } = origin;
 
   return `
     <div class="column is-one-quarter">
@@ -33,14 +33,15 @@ const CardItem = props => {
 };
 
 
+
 const getCharacters = async (baseURL, from, to) => {
   //Array.From investigar, parecida a .map;
   //Array.from ({length:5}, (v, i) => i);
   // array from genera un array a partir de la iteración. Busca 20 personajes basandose en el FROM y TO;
-  const charactersRange = Array.from({length: to - from + 1}, (_,index)=>index + 1).join(',');
+  const charactersRange = Array.from({ length: to - from + 1 }, (_, index) => index + 1).join(',');
   const url = `${baseURL}character/${charactersRange}`;
   const response = await fetch(url);
-  const characters =  await response.json();
+  const characters = await response.json();
 
   return characters;
 }
@@ -56,11 +57,11 @@ const getCharactersByQuery = async (baseURL, query) => {
 
 const appendElements = (characters, emptyGrid) => {
   const $grid = document.querySelector('.grid');
-  if(emptyGrid) {$grid.innerHTML = null;};
-    characters.forEach(character => {
+  if (emptyGrid) { $grid.innerHTML = null; };
+  characters.forEach(character => {
     const cardItemHtml = CardItem(character);
     $grid.innerHTML += cardItemHtml;
-  
+
   });
 
 }
@@ -73,23 +74,48 @@ const main = async () => {
   const characters = await getCharacters(baseURL, 1, 20);
   console.log(characters);
   appendElements(characters);
-   
+
 
   // Parte 2: crear un buscador de personajes;
   const $submit = document.querySelector('.handler_search');
-  $submit.addEventListener('click', async (event)=> {
+  $submit.addEventListener('click', async (event) => {
     // ¿.preventDefault? Investigar;
     event.preventDefault();
     const $input = document.querySelector('.input_search');
     console.log('click en search');
     const valor = $input.value;
     console.log(valor);
-    
+
     const charactersByQuery = await getCharactersByQuery(baseURL, valor);
     console.log(charactersByQuery.results);
     appendElements(charactersByQuery.results, true);
 
   });
+
+
+  // Pruebas para ver si podia arreglar lo del modal con el reload de la pagina pero por ahora no va;
+  
+    // Get the element, add a click listener...
+    /*document.getElementById("botonPadre").addEventListener("click", function (e) {
+      // e.target is the clicked element!
+      // If it was a list item
+      console.log("FAK LA POLICE");
+      if (e.target && e.target.id == 1) {
+        // List item found!  Output the ID!
+        console.log("FAK LA POLICE");
+      }
+    });*/
+
+    //let botonesPrueba = document.getElementsByClassName('buttons');
+    /*botonesPrueba.addEventListener("click", function() {
+      console.log("Holu");
+    })*/
+    //console.log(botonesPrueba);
+
+
+
+
+
 
   // Agregar el modal, al hacer click en un botón debe desplegar un modal con los datos del planeta y episodios en los que aparece el personaje. Un workaround posible es agregar un atributo data al botón y capturarlo como parametro para la muestra de los datos restantes;
 
@@ -120,11 +146,11 @@ const main = async () => {
 
 
       //Llamo a la funcion extra elegida por mí;
-      $modalBoton.addEventListener ('click', () => {
-      console.log("click");
-      funcionExtra (realCharacter);
+      $modalBoton.addEventListener('click', () => {
+        console.log("click");
+        funcionExtra(realCharacter);
       })
-      
+
     })
   })
 
@@ -149,10 +175,10 @@ const main = async () => {
     // cantidad de capitulos;
     console.log(cantidadCapitulos);
     // url de cada uno de los capitulos;
-    console.log (todosLosCaps);
+    console.log(todosLosCaps);
 
     // forEach para que en cada uno de los episodios imprima en pantalla;
-    todosLosCaps.forEach(function(capitulo){
+    todosLosCaps.forEach(function (capitulo) {
 
       //console.log(capitulo);
       $contenidoModal.innerHTML += `<div>${capitulo}</div>`;
@@ -163,13 +189,12 @@ const main = async () => {
 
     /* PEDIR A API DE EPISODIOS*/
 
-    
-    
+
   }
 
 
 
 }
 
-main ();
+main();
 
