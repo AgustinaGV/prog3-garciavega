@@ -82,7 +82,7 @@ body {
 
 .divContainer {
 
-	width: 50%;
+	width: 47.5%;
 	height: 100%;
 	display: flex;
 }
@@ -164,6 +164,23 @@ body {
 .infoHover:hover .hoverText {
 	visibility: visible;
 }
+/* SETTINGS */
+
+.settings  {
+
+	width: 5%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.settings img {
+
+	height: 2em;
+	filter: invert(10);
+	opacity: 0.8;
+	
+}
 
 /* DIV INFO */
 
@@ -172,18 +189,17 @@ body {
 	width:22em;
 }
 
-.divInfo h2 {
+.divInfo .spanTitulo {
 
-	width: 40%;
-    margin-bottom: 2%;
     border-bottom-width: thick;
     font-size: 1.3em;
-    font-weight: 600;
-    border-bottom: 3px solid black;
-}
+	font-weight: 600;
 
-.divInfo h3 {
-	font-style: italic;
+	/*Border bottom style*/
+	border-bottom-style: 3px;
+	border-bottom-style: solid;
+	border-bottom-style: inset;
+  	border-bottom-color: #98c756;
 }
 
 .divInfoElements {
@@ -202,4 +218,9 @@ body {
 .infoType {
 
 	text-transform: capitalize;
+	font-style: italic;
+	display: block;
+	padding:1em 0em 1em 0em;
 }
+
+
