@@ -86,14 +86,14 @@ const addMarker = (map, marker) => {
     //Armo la infowindow
     const contentString = `
     <div class="divInfo">
-    <div class="divInfoContainer">
-    <h2 class="divInfoElements">${name}</h2>
-    <h3 class="divInfoElements">${type} - ${veg}</h3>
-    <p class="divInfoElements">${description}</p>
-    <p class="divInfoElements">${number}</p>
-    <p class="divInfoElements">${horarioAtencion}</p>
-    <p class="divInfoElements">Envíos a domicilio: ${delivery}</p>
-    <p class="divInfoElements">${redes}</p>
+        <div class="divInfoContainer">
+            <h2 class="divInfoElements">${name}</h2>
+            <h3 class="divInfoElements infoType">${type} - ${veg}</h3>
+            <p class="divInfoElements">${description}</p>
+            <p class="divInfoElements">${number}</p>
+            <p class="divInfoElements">Horario de atención: ${horarioAtencion}</p>
+            <p class="divInfoElements">Envíos a domicilio: ${delivery}</p>
+            <p class="divInfoElements infoRedes">${redes}</p>
     </div>
     </div>`;
     const infowindow = new google.maps.InfoWindow({
@@ -113,6 +113,7 @@ const addMarker = (map, marker) => {
         {
             position: { lat: lat, lng: lng },
             icon: icons[type],
+            //scale:20,
             map: map,
             customInfo: type
         }
