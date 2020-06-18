@@ -8,12 +8,12 @@ const Listado = () => {
     return (
         <div>
             <section>
-                <h1>Lista de Empleados</h1>
-                <div>
+                <h1 id="App-listTitle">Lista de Empleados</h1>
+                <div id="App-searcher">
                     <input type="text"></input>
                     <Boton caption="Agregar empleado"/>
                 </div>
-                <select>
+                <select id="App-categoryFilter">
                     <option disabled="disabled">Elegir categoría</option>
                     <option value=""></option>
                     <option value=""></option>
@@ -21,7 +21,7 @@ const Listado = () => {
                     <option value=""></option>
                 </select>
             </section>
-            <section>
+            <section id="App-list">
                 <Card />
                 <Card />
                 <Card />

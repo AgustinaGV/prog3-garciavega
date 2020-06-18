@@ -1,8 +1,6 @@
 .App-wrapper {
    
     background-color:#000;
-    min-height: 60vh;
-    max-height: 60vh;
     color:rgb(205, 175, 224);
     font-size: 1em;
 }

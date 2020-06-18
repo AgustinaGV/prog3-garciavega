@@ -30,7 +30,23 @@ class App extends React.Component {
     // acá inicializamos state;
     this.state = {
       date: new Date(),
-      nameAlumno: ""
+      users: [
+        {name:"Fulano 1",
+        category:"Jefe",
+        avatar:""},
+        {name:"Fulano 2",
+        category:"Secretario",
+        avatar:""},
+        {name:"Fulano 3",
+        category:"Atiende el teléfono",
+        avatar:""},
+        {name:"Fulano 4",
+        category:"No se sabe",
+        avatar:""},
+        {name:"Fulano 5",
+        category:"Agente encubierto",
+        avatar:""},
+      ]
     };
   }
 
@@ -47,7 +63,6 @@ class App extends React.Component {
   // Se ejecuta al inicio y cada vez que cambiael state;
   render() {
     console.log('Se ejecutó el Render');
-    console.log('ola');
     // acá mostramos data en HTML;
     return (
       <div className="App">

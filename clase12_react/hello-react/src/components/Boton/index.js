@@ -7,8 +7,7 @@ const Boton = props => {
 
     return (
         <button className="App-button" 
-        onClick = {handleClick}
-        >
+        onClick = {handleClick}>
             {caption || 'Click'}
         </button>
     )

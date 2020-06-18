@@ -1,19 +1,26 @@
 import React from 'react'
 import '../Card/index.css'
+import bob from './bob.jpeg'
 
 const Card = () => {
 
     return (
-        <div>
-            <div>
-                <img src="" alt="" />
+        <div className="App-card">
+            <div className="App-cardDiv">
+                <img src={bob} alt="Bob" className="App-avatar" />
             </div>
-            <div>
-                <h1>Nombre</h1>
-                <h2>Categoria</h2>
+            <div className="App-cardDiv">
+                <h1 className="App-itemName">
+                    hola
+                </h1>
+                <h2 className="App-itemCategory">
+                    chau
+                </h2>
             </div>
-            <div>
-                
+            <div className="App-cardDiv App-cardButtons">
+                <button>Editar</button>
+                <button>Eliminar</button>
+                <button>Empleadx del mes</button>
             </div>
         </div>
     )

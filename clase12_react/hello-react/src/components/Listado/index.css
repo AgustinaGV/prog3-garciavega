@@ -1,0 +1,15 @@
+#App-searcher input {
+
+    width: 70%;
+    height: 2.5em;
+    margin-right:2em;
+
+}
+
+#App-categoryFilter {
+
+    margin-top:1em;
+    height: 2em;
+    width: 20em;
+    color:black;
+}
