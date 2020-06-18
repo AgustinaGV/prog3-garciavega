@@ -1,13 +1,15 @@
 import React from 'react'
 import '../Wrapper/index.css'
+import Boton from '../Boton'
 
 const Wrapper = props => {
 
     return (
         <div className="App-wrapper">
             <p>
-                Holis. Esto es un wrapper, ¿viste?
+                Esto es un wrapper que funciona
         </p>
+        <Boton caption="Ver más" />
         </div>
     )
 }
