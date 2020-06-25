@@ -1,26 +1,36 @@
 import React from 'react'
 import '../Card/index.css'
-import bob from './bob.jpeg'
+import Boton from '../Boton'
+import BtnEmpleadoDelMes from '../BtnEmpleadoDelMes'
 
-const Card = () => {
+const Card = props => {
+
+    const {
+        employeeData,
+        handleEmpleadoMes
+    } = props
+
+    const {name, sector, id, avatar} = employeeData;
 
     return (
         <div className="App-card">
             <div className="App-cardDiv">
-                <img src={bob} alt="Bob" className="App-avatar" />
+                <img src={employeeData.avatar} alt="img" className="App-avatar" />
             </div>
             <div className="App-cardDiv">
                 <h1 className="App-itemName">
-                    hola
+                    {employeeData.name}
                 </h1>
                 <h2 className="App-itemCategory">
-                    chau
+                    {employeeData.sector}
                 </h2>
             </div>
             <div className="App-cardDiv App-cardButtons">
+                {/*<Boton caption="Editar" />
+                <Boton caption="Eliminar" /> */}
                 <button>Editar</button>
                 <button>Eliminar</button>
-                <button>Empleadx del mes</button>
+                <BtnEmpleadoDelMes employeeId={id} handleEmpleadoMes={handleEmpleadoMes}/>
             </div>
         </div>
     )
