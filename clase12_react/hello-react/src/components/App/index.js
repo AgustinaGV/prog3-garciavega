@@ -52,7 +52,7 @@ class App extends React.Component {
       id: faker.random.uuid()
     }
 
-    const newList = {newEmployee, ...employees}
+    const newList = [newEmployee, ...employees]
     this.setState({ 
       employees: newList 
     })
