@@ -8,31 +8,39 @@ const Listado = props => {
 
     const {
         employeeData,
-        handleEmpleadoMes
+        handleEmpleadoMes,
+        handleAddEmployeeSubmit,
+        handleEmployeeChange,
+        employeeName
     } = props
 
+    console.log(employeeData);
     return (
         <div>
             <section>
+                
                 <h1 id="App-listTitle">Lista de Empleados</h1>
-                <div id="App-searcher">
-                    <input type="text"></input>
-                    <Boton caption="Agregar empleado" />
-                </div>
+
+                <form id="App-searcher" onSubmit={handleAddEmployeeSubmit}>
+                    <input type="text" onChange={handleEmployeeChange} value={employeeName}></input>
+                    <button type="submit">Agregar empleado</button>
+                </form>
+
                 <select id="App-categoryFilter">
                     <option disabled="disabled">Elegir categoría</option>
                     <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
                 </select>
+
             </section>
 
             <section id="App-list"> 
-            
             {
                 employeeData.map((employee) => 
-                    <Card employeeData={employee} key={employee.id} handleEmpleadoMes={handleEmpleadoMes}/>
+                    <Card 
+                        employeeData={employee} 
+                        key={employee.id} 
+                        handleEmpleadoMes={handleEmpleadoMes}
+                    />
                 )
             }
             </section>

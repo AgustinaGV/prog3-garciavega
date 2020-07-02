@@ -6,12 +6,21 @@ const Main = props => {
 
     const {
         employeeData,
-        handleEmpleadoMes
+        handleEmpleadoMes,
+        handleEmployeeChange,
+        handleAddEmployeeSubmit,
+        employeeName
     } = props;
 
     return (
         <div className="App-main">
-            <Listado employeeData = {employeeData} handleEmpleadoMes={handleEmpleadoMes}/>
+            <Listado 
+                employeeData = {employeeData} 
+                handleEmpleadoMes={handleEmpleadoMes} 
+                handleEmployeeChange={handleEmployeeChange} 
+                handleAddEmployeeSubmit={handleAddEmployeeSubmit}
+                employeeName={employeeName}
+            />
         </div>
     )
 }

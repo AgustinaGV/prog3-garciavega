@@ -7,13 +7,16 @@ const Card = props => {
 
     const {
         employeeData,
-        handleEmpleadoMes
+        handleEmpleadoMes,
+        empleadoDelMesID
     } = props
 
-    const {name, sector, id, avatar} = employeeData;
+    const { name, sector, id, avatar } = employeeData;
+
+    const isMonthEmployee = empleadoDelMesID === id
 
     return (
-        <div className="App-card">
+        <div className={`App-card ${isMonthEmployee ? 'eotm' : ''}`}>
             <div className="App-cardDiv">
                 <img src={employeeData.avatar} alt="img" className="App-avatar" />
             </div>
@@ -30,7 +33,12 @@ const Card = props => {
                 <Boton caption="Eliminar" /> */}
                 <button>Editar</button>
                 <button>Eliminar</button>
-                <BtnEmpleadoDelMes employeeId={id} handleEmpleadoMes={handleEmpleadoMes}/>
+
+                {!isMonthEmployee &&
+                    <BtnEmpleadoDelMes employeeId={id} handleEmpleadoMes={handleEmpleadoMes} />
+                }
+
+
             </div>
         </div>
     )

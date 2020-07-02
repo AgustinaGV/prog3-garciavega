@@ -25,11 +25,40 @@ class App extends React.Component {
       date: new Date(),
       employees: employees,
       listBackup: employees,
-      empleadoDelMes: null
+      empleadoDelMes: null,
+      employeeName: ''
     }
     this.handleEmpleadoMes = this.handleEmpleadoMes.bind(this) //Linea mounstrosa
+    this.handleEmployeeChange = this.handleEmployeeChange.bind(this) //Linea mounstrosa
+    this.handleAddEmployeeSubmit = this.handleAddEmployeeSubmit.bind(this) //Linea mounstrosa
   }
 
+  // funcion input para agregar empleado;
+  handleEmployeeChange = event => {
+    const { value } = event.target
+    this.setState({ employeeName: value })
+  }
+
+  // funcion para agregar nuevo empleado al array de empleados;
+  handleAddEmployeeSubmit = event => {
+    console.log(event);
+    event.preventDefault();
+    const { employees, employeeName } = this.state
+
+    const newEmployee = {
+      name: employeeName,
+      sector: faker.name.jobArea(),
+      avatar: faker.image.avatar(),
+      id: faker.random.uuid()
+    }
+
+    const newList = {newEmployee, ...employees}
+    this.setState({ 
+      employees: newList 
+    })
+  }
+
+  // function empleado del mes;
   handleEmpleadoMes(employeeId) {
     // setear el estado diciendo cual es el id del empleado del mes;
     this.setState({
@@ -54,7 +83,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <Main employeeData={this.state.employees} handleEmpleadoMes={this.handleEmpleadoMes} />
+        <Main 
+          employeeData={this.state.employees}
+          handleEmpleadoMes={this.handleEmpleadoMes} 
+          handleEmployeeChange={this.handleEmployeeChange}
+          handleAddEmployeeSubmit={this.handleAddEmployeeSubmit}
+          employeeName={this.state.employeeName}
+        />
         <Footer texto="Footer" fecha={this.state.date} />
       </div>
     )
