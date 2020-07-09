@@ -41,7 +41,6 @@ class App extends React.Component {
 
   // funcion para agregar nuevo empleado al array de empleados;
   handleAddEmployeeSubmit = event => {
-    console.log(event);
     event.preventDefault();
     const { employees, employeeName } = this.state
 
@@ -56,6 +55,13 @@ class App extends React.Component {
     this.setState({ 
       employees: newList 
     })
+  }
+
+  // delete employee;
+  handleDeleteEmployee = (id) => {
+
+    
+    
   }
 
   // function empleado del mes;
