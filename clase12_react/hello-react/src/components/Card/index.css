@@ -35,7 +35,7 @@
     text-transform: capitalize;
 }
 
-.App-itemCategory {
+.App-itemSection {
 
     color:white;
     font-size: 1em;
@@ -83,3 +83,22 @@
 
     background-color: yellow;
 }
+
+/*------- css del ex componente Boton ------*/
+
+/* 
+.App-button {
+    background-color: rgb(38, 88, 180);
+    border:none;
+    border-radius: 0.1em;
+    padding: 0.9em 1.5em 0.9em 1.5em;
+    color: white;
+    font-weight: 600;
+    font-size:0.85em;
+}
+
+.App-button:hover {
+
+    background-color: rgb(74, 82, 204);
+}
+*/

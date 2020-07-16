@@ -1,6 +1,5 @@
 import React from 'react'
 import '../Header/index.css'
-import Boton from '../Boton'
 
 const Header = props => {
 

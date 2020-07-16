@@ -1,6 +1,5 @@
 import React from 'react'
 import '../Listado/index.css'
-import Boton from '../Boton'
 import Card from '../Card'
 import BtnEmpleadoDelMes from '../BtnEmpleadoDelMes'
 
@@ -8,9 +7,9 @@ const Listado = props => {
 
     const {
         employeeData,
-        handleEmpleadoMes,
-        handleAddEmployeeSubmit,
-        handleEmployeeChange,
+        handleEmployeeOTM,
+        handleAddEmployee,
+        handleEmployeeModify,
         employeeName
     } = props
 
@@ -21,13 +20,13 @@ const Listado = props => {
                 
                 <h1 id="App-listTitle">Lista de Empleados</h1>
 
-                <form id="App-searcher" onSubmit={handleAddEmployeeSubmit}>
-                    <input type="text" onChange={handleEmployeeChange} value={employeeName}></input>
+                <form id="App-searcher" onSubmit={handleAddEmployee}>
+                    <input type="text" onChange={handleEmployeeModify} value={employeeName}></input>
                     <button type="submit">Agregar empleado</button>
                 </form>
 
-                <select id="App-categoryFilter">
-                    <option disabled="disabled">Elegir categoría</option>
+                <select id="App-sectionFilter">
+                    <option disabled="disabled">Elegir sección</option>
                     <option value=""></option>
                 </select>
 
@@ -39,7 +38,7 @@ const Listado = props => {
                     <Card 
                         employeeData={employee} 
                         key={employee.id} 
-                        handleEmpleadoMes={handleEmpleadoMes}
+                        handleEmployeeOTM={handleEmployeeOTM}
                     />
                 )
             }

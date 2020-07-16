@@ -1,11 +1,11 @@
 import React from 'react'
 import '../Card/index.css'
-import Boton from '../Boton'
 import BtnEmpleadoDelMes from '../BtnEmpleadoDelMes'
 
 const Card = props => {
 
     const {
+        // props del boton MonthEmployee;
         employeeData,
         handleEmpleadoMes,
         empleadoDelMesID
@@ -14,6 +14,8 @@ const Card = props => {
     const { name, sector, id, avatar } = employeeData;
 
     const isMonthEmployee = empleadoDelMesID === id
+
+    const handleClick = (event) => console.log('Eso fue un click');
 
     return (
         <div className={`App-card ${isMonthEmployee ? 'eotm' : ''}`}>
@@ -24,15 +26,19 @@ const Card = props => {
                 <h1 className="App-itemName">
                     {employeeData.name}
                 </h1>
-                <h2 className="App-itemCategory">
+                <h2 className="App-itemSection">
                     {employeeData.sector}
                 </h2>
             </div>
             <div className="App-cardDiv App-cardButtons">
-                {/*<Boton caption="Editar" />
-                <Boton caption="Eliminar" /> */}
-                <button>Editar</button>
-                <button>Eliminar</button>
+                <button className="App-button" 
+                onClick = {handleClick}>
+                    Editar
+                </button>
+                <button className="App-button" 
+                onClick = {handleClick}>
+                    Eliminar
+                </button>
 
                 {!isMonthEmployee &&
                     <BtnEmpleadoDelMes employeeId={id} handleEmpleadoMes={handleEmpleadoMes} />
