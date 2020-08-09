@@ -10,7 +10,8 @@ const Listado = props => {
         handleEmployeeOTM,
         handleAddEmployee,
         handleEmployeeModify,
-        employeeName
+        employeeName,
+        handleModal
     } = props
 
     console.log(employeeData);
@@ -32,6 +33,14 @@ const Listado = props => {
 
             </section>
 
+            <section id="modal">
+                <div>
+                    <h1>Agregar/modificar empleado</h1>
+                    <input type="text" /*value={this.state.employeeToEdit}*/></input>
+                    <button className="close" onClick={()=>handleModal()}>X</button>
+                </div>
+            </section>
+
             <section id="App-list"> 
             {
                 employeeData.map((employee) => 
@@ -43,6 +52,7 @@ const Listado = props => {
                 )
             }
             </section>
+
         </div>
     )
 }

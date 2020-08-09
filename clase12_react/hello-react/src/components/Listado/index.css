@@ -13,3 +13,9 @@
     width: 20em;
     color:black;
 }
+
+#modal {
+
+    visibility: hidden;
+    
+}
