@@ -43,9 +43,11 @@ class App extends React.Component {
     this.handleEmployeeOTM = this.handleEmployeeOTM.bind(this); //Linea mounstrosa
     this.handleEmployeeModify = this.handleEmployeeModify.bind(this); //Linea mounstrosa
     this.handleAddEmployee = this.handleAddEmployee.bind(this); //Linea mounstrosa
+    this.handleDeleteEmployee = this.handleDeleteEmployee.bind(this);
+    this.handleEditEmployee = this.handleEditEmployee.bind(this);
     this.handleModal = this.handleModal.bind(this); //Linea monstruosa
     
-  
+    
   }
 
   // funcion empleado del mes;
@@ -100,18 +102,20 @@ class App extends React.Component {
   // funcion para modificar empleado;
   // busca por id al empleado a editar, lo busca en la lista de empleados, guarda los datos del empleado a editar en un nuevo objeto y lo setea al estado;
   handleEditEmployee = id => {
+    this.handleModal();
     const {employees} = this.state;
     const selectedEmployee = employees.find(employee => employee.id === id)
     this.setState({
       employeeToEdit: selectedEmployee,
       employeeToEditName: selectedEmployee.name
     })
-    this.handleModal();
+    
   }
   
   // hace destructuring del estado y saca el employeeToEdit de handleEditEmployee, y hace un destructuring de la lista entera de empleados. Con eso hace una nueva lista de empleados SIN el empleado que iba a editar. Y setea el estado con el array que empieza con el empleado EDITADO y atrás pone los demas empleados;
   handleEmployeeEdit = (event) => {
     event.preventDefault();
+    this.handleModal();
     const { employeeToEdit, employees } = this.state
     const listWithoutEmployee = employees.filter (employee => employee.id !== employeeToEdit.id)
     this.setState({
@@ -134,6 +138,7 @@ class App extends React.Component {
 
   // funcion form options sectores;
   handleSelectSector = sector => {
+    this.handleModal();
     const { listBackup } = this.state
 
     const listFilteredBySector = listBackup.filter(employee => employee.sector === sector)
@@ -157,7 +162,7 @@ class App extends React.Component {
 
     const modal = document.getElementById('modal');
 
-    if (modal.style.visibility != 'visible') {
+    if (modal.style.visibility !== 'visible') {
       modal.style.visibility = "visible";
       console.log("muestra modal");
     } else {
@@ -186,12 +191,23 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <Listado 
+          //para las cards de empleados;
           employeeData={this.state.employees}
-          handleEmployeeOTM={this.handleEmployeeOTM} 
+          //key={employee.id}
+          handleEmployeeOTM={this.handleEmployeeOTM}
+          empleadoDelMesID={this.state.empleadoDelMes}
+          handleDeleteEmployee={this.handleDeleteEmployee}
+          handleEditEmployee={this.handleEditEmployee}
+          //para el form;
+          employeeName={this.state.employeeName}
           handleEmployeeModify={this.handleEmployeeModify}
           handleAddEmployee={this.handleAddEmployee}
-          employeeName={this.state.employeeName}
+          //para el modal;
           handleModal={this.handleModal}
+          sectors={sectors}
+          selectedSector={selectedSector}
+          onSelectedSector={this.handleSelectSector}
+          onRemoveSelectedSector={this.handleRemoveSelectedSector}
         />
         <Footer texto="Footer"/>
       </div>

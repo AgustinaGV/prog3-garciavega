@@ -1,0 +1,21 @@
+Funciones 	Lean vs mías
+
+handleEmpleadoMesClick = handleEmployeeOTM
+
+handleAddEmployeeChange = handleEmployeeModify
+
+handleAddEmployeeSubmit = handleAddEmployee
+
+handleSelectSector = handleSelectSector
+
+handleRemoveSelectedSector = handleRemoveSelectedSector
+
+handleRemoveEmployee = handleDeleteEmployee
+
+handleEditEmployee = handleEditEmployee
+
+handleModalClose = handleModal
+
+handleEmployeeEdit = handleEmployeeEdit
+
+handleEditEmployeeName =handleEditEmployeeName

@@ -1,20 +1,21 @@
 import React from 'react'
 import '../Listado/index.css'
 import Card from '../Card'
-import BtnEmpleadoDelMes from '../BtnEmpleadoDelMes'
 
 const Listado = props => {
 
     const {
         employeeData,
         handleEmployeeOTM,
+        empleadoDelMesID,
         handleAddEmployee,
         handleEmployeeModify,
+        handleDeleteEmployee,
+        handleEditEmployee,
         employeeName,
         handleModal
     } = props
 
-    console.log(employeeData);
     return (
         <div>
             <section>
@@ -48,6 +49,10 @@ const Listado = props => {
                         employeeData={employee} 
                         key={employee.id} 
                         handleEmployeeOTM={handleEmployeeOTM}
+                        //empleadoDelMesID={this.empleadoDelMes}
+                        //handleDeleteEmployee={this.handleDeleteEmployee}
+                        handleEditEmployee={this.handleEditEmployee}
+
                     />
                 )
             }
