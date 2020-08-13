@@ -190,6 +190,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
+        <Dropdown
+         sectors={sectors}
+         selectedSector={selectedSector}
+         onSelectSector={this.handleSelectSector}
+         onRemoveSelectedSector={this.handleRemoveSelectedSector}
+         optionState={this.state.optionState}>
+        </Dropdown>
         <Listado 
           //para las cards de empleados;
           employeeData={this.state.employees}
@@ -213,6 +220,54 @@ class App extends React.Component {
       </div>
     )
   }
+}
+
+const Dropdown = props => {
+  const {
+    sectors,
+    selectedSector,
+    onSelectSector,
+    onRemoveSelectedSector,
+    optionState
+  } = props;
+  return (
+    <div className='App-Dropdown'>
+      <h2>Filtrar por sector</h2>
+      <div className='filter'>
+        <select name='sectors' onChange={event => onSelectSector(event.target.value)}>
+          <option selected={optionState} disabled>Elegí un sector</option>
+          {
+            sectors.map((sector) =>
+              <option
+                key={sector}
+                value={sector}
+              >
+                {sector}
+
+              </option>
+            )
+          }
+        </select>
+
+        {
+          selectedSector && (
+            <button
+              className='button'
+              aria-haspopup='true'
+              aria-controls='dropdown-menu'
+              onClick={onRemoveSelectedSector}
+              style={{ marginLeft: '15px' }}
+            >
+              <span>{selectedSector}</span>
+              <span className='icon is-small'>
+                <i className='fas fa-trash-alt' aria-hidden='true' />
+              </span>
+            </button>
+          )
+        }
+      </div>
+    </div>
+  )
 }
 
 
