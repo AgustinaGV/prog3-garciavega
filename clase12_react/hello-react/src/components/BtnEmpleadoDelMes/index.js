@@ -4,13 +4,13 @@ const BtnEmpleadoDelMes = props => {
 
     const {
         employeeId,
-        handleEmpleadoMes
+        handleEmployeeOTM
     } = props
 
 
     return(
         <button 
-            onClick={()=>handleEmpleadoMes(employeeId)}
+            onClick={()=>handleEmployeeOTM(employeeId)}
         >
             Empleade del mes
         </button>

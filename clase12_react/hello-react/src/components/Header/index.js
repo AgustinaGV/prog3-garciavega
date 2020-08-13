@@ -6,7 +6,7 @@ const Header = props => {
     return (
         <header className="App-header">
             <p>
-                Header
+                Lista de empleades
         </p>
         </header>
     )

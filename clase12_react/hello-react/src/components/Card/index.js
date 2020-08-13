@@ -7,7 +7,7 @@ const Card = props => {
     const {
         // props del boton MonthEmployee;
         employeeData,
-        handleEmpleadoMes,
+        handleEmployeeOTM,
         empleadoDelMesID
     } = props
 
@@ -41,7 +41,7 @@ const Card = props => {
                 </button>
 
                 {!isMonthEmployee &&
-                    <BtnEmpleadoDelMes employeeId={id} handleEmpleadoMes={handleEmpleadoMes} />
+                    <BtnEmpleadoDelMes employeeId={id} handleEmployeeOTM={handleEmployeeOTM} />
                 }
 
 

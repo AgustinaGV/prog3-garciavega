@@ -213,8 +213,10 @@ class App extends React.Component {
           handleModal={this.handleModal}
           sectors={sectors}
           selectedSector={selectedSector}
+          onSelectSector={this.handleSelectSector}
           onSelectedSector={this.handleSelectSector}
           onRemoveSelectedSector={this.handleRemoveSelectedSector}
+          optionState={this.state.optionState}
         />
         <Footer texto="Footer"/>
       </div>

@@ -81,7 +81,9 @@
 
 .eotm {
 
-    background-color: yellow;
+    background-color: rgb(124, 8, 109);
+    /*border: solid white;*/
+    border-radius: 1em;
 }
 
 /*------- css del ex componente Boton ------*/

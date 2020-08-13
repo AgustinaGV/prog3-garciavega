@@ -20,8 +20,6 @@ const Listado = props => {
         <div>
             <section>
                 
-                <h1 id="App-listTitle">Lista de Empleados</h1>
-
                 <form id="App-searcher" onSubmit={handleAddEmployee}>
                     <input type="text" onChange={handleEmployeeModify} value={employeeName}></input>
                     <button type="submit">Agregar empleade</button>
