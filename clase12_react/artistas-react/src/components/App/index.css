@@ -1,0 +1,71 @@
+/*-------------------- GENERALES --------------------*/
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding:10px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-main {
+
+  min-height: calc(100vh - 100px) ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-footer {
+  
+  height: 50px;
+  background-color: #282c34;
+  color:#fff;display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/*-------------------- OTROS --------------------*/
+
+
+.App-buttons {
+
+  padding: 1em 2.5em 1em 2.5em;
+  margin: 3em;
+  border-radius: 0;
+  border: none;
+  text-align: center;
+  display: inline-block;
+  color:white;
+  background-color: rgb(147, 147, 245);
+  font-size:1em;
+  font-weight: 500;
+
+}
+
+.App-buttons:hover{
+
+  background-color: rgb(125, 125, 211);
+}
+
+.App-card {
+
+  width: 800px;
+  padding:20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.App-card img {
+  width: 100px;
+  border-radius: 80px;
+}

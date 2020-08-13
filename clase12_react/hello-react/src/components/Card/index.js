@@ -8,7 +8,9 @@ const Card = props => {
         // props del boton MonthEmployee;
         employeeData,
         handleEmployeeOTM,
-        empleadoDelMesID
+        empleadoDelMesID,
+        handleEditEmployee,
+        handleDeleteEmployee
     } = props
 
     const { name, sector, id, avatar } = employeeData;
@@ -32,11 +34,11 @@ const Card = props => {
             </div>
             <div className="App-cardDiv App-cardButtons">
                 <button className="App-button" 
-                onClick = {handleClick}>
+                onClick = {handleEditEmployee}>
                     Editar
                 </button>
                 <button className="App-button" 
-                onClick = {handleClick}>
+                onClick = {handleDeleteEmployee}>
                     Eliminar
                 </button>
 
