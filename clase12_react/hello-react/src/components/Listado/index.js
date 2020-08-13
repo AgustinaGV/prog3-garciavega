@@ -28,7 +28,7 @@ const Listado = props => {
                 </form>
 
                 <select id="App-sectionFilter">
-                    <option disabled="disabled">Elegir sección</option>
+                    <option disabled="disabled">Elegir sector</option>
                     <option value=""></option>
                 </select>
 
@@ -49,9 +49,9 @@ const Listado = props => {
                         employeeData={employee} 
                         key={employee.id} 
                         handleEmployeeOTM={handleEmployeeOTM}
-                        //empleadoDelMesID={this.empleadoDelMes}
-                        //handleDeleteEmployee={this.handleDeleteEmployee}
-                        handleEditEmployee={this.handleEditEmployee}
+                        empleadoDelMesID={empleadoDelMesID}
+                        handleDeleteEmployee={handleDeleteEmployee}
+                        handleEditEmployee={handleEditEmployee}
 
                     />
                 )
