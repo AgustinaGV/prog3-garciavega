@@ -232,7 +232,7 @@ const Dropdown = props => {
   } = props;
   return (
     <div className='App-Dropdown'>
-      <h2>Filtrar por sector</h2>
+      <h2>Elegir sector</h2>
       <div className='filter'>
         <select name='sectors' onChange={event => onSelectSector(event.target.value)}>
           <option selected={optionState} disabled>Elegí un sector</option>

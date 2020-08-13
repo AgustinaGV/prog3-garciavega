@@ -24,13 +24,8 @@ const Listado = props => {
 
                 <form id="App-searcher" onSubmit={handleAddEmployee}>
                     <input type="text" onChange={handleEmployeeModify} value={employeeName}></input>
-                    <button type="submit">Agregar empleado</button>
+                    <button type="submit">Agregar empleade</button>
                 </form>
-
-                <select id="App-sectionFilter">
-                    <option disabled="disabled">Elegir sector</option>
-                    <option value=""></option>
-                </select>
 
             </section>
 

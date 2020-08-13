@@ -12,7 +12,7 @@ const BtnEmpleadoDelMes = props => {
         <button 
             onClick={()=>handleEmpleadoMes(employeeId)}
         >
-            Empleadx del mes
+            Empleade del mes
         </button>
     )
 }
