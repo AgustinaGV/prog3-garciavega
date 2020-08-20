@@ -1,16 +1,28 @@
 import React from 'react';
 import '../App/index.css';
-import Header from '../Header'
-import Main from '../Main'
-import Footer from '../Footer'
+import Home from '../../pages/Home'
+import Artist from '../../pages/Artist'
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Main />
-      <Footer />
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/Artist/:id">
+          <Artist />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

@@ -34,7 +34,7 @@ const Card = props => {
             </div>
             <div className="App-cardDiv App-cardButtons">
                 <button className="App-button" 
-                onClick = {handleEditEmployee}>
+                onClick = {() => handleEditEmployee(id)}>
                     Editar
                 </button>
                 <button className="App-button" 

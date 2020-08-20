@@ -102,14 +102,16 @@ class App extends React.Component {
   // funcion para modificar empleado;
   // busca por id al empleado a editar, lo busca en la lista de empleados, guarda los datos del empleado a editar en un nuevo objeto y lo setea al estado;
   handleEditEmployee = id => {
+    console.log(typeof id)
     this.handleModal();
     const {employees} = this.state;
+    console.log(employees)
     const selectedEmployee = employees.find(employee => employee.id === id)
+    console.log(selectedEmployee )
     this.setState({
       employeeToEdit: selectedEmployee,
       employeeToEditName: selectedEmployee.name
     })
-    
   }
   
   // hace destructuring del estado y saca el employeeToEdit de handleEditEmployee, y hace un destructuring de la lista entera de empleados. Con eso hace una nueva lista de empleados SIN el empleado que iba a editar. Y setea el estado con el array que empieza con el empleado EDITADO y atrás pone los demas empleados;

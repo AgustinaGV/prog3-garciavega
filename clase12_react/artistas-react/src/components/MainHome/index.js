@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Card from '../Card'
 import axios from 'axios'
 
-const Main = () => {
+const MainHome = () => {
 
     //traigo el hook 'useState', variable que toma los valores del useState, funcion que setea la variable;
     /*const [contador, setContador] = useState(0)
@@ -41,7 +41,7 @@ const Main = () => {
 
             <h1>Listado de artistas</h1>
 
-            {artists.map(artists => <Card ket={artists._id} data={artists}/>)}
+            {artists.map(artists => <Card key={artists._id} data={artists}/>)}
 
             
         </div>
@@ -49,4 +49,4 @@ const Main = () => {
     )
 }
 
-export default Main
+export default MainHome
