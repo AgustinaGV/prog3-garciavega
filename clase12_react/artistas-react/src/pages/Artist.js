@@ -1,7 +1,5 @@
 import React from 'react'
-import {
-    useParams
-} from "react-router-dom"
+import { useParams } from "react-router-dom"
 import Layout from '../containers/Layout'
 import MainArtist from '../components/MainArtist'
 

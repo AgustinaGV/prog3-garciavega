@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import Card from '../Card'
 import axios from 'axios'
-import {
-    useParams
-} from "react-router-dom"
+import { useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const MainArtist = () => {
 
@@ -42,9 +41,10 @@ const MainArtist = () => {
     return (
         <div className="App-main">
             <h1>Listado de artistas</h1>
-            {artist.name}
+            <h2>{artist.name}</h2>
             <img src={artist.avatar} alt={artist.name}/>
-            {artist.genre}
+            <p>{artist.genre}</p>
+            <Link to="/">Volver</Link>
         </div>
     )
 }
